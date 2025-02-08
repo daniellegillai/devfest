@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styleshub.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Hub</title>
 </head>
-<body>
-    <div class="textbox">
-        Welcome to your page
-    </div>
-    <div class="center-text">
-        <h1>Navigation Bar</h1>
-        <p> Dental, Eye, or Perscription</p>
-        
-    </div>
+<header>
+    <nav id = "navbar">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="dental.html">Dental</a></li>
+            <li><a href="optical.html">Optical</a></li>
+            <li><a href="prescriptions.html">Prescriptions</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body style="background-color: rgba(255, 212, 198, 0.938);">
+
+ <button id="modalButton" class = "button1">Open Modal</button>
+ 
+ <!-- The Modal -->
+ <div id="myModal" class="modal">
+     <!-- Modal content -->
+     <div class="modal-content">
+         <span class="close">&times;</span>
+         <p>Some text in the Modal..</p>
+     </div>
+ </div>
+ <script src="../scripts/button1script.js"></script>
+</body>
+
 </html>
