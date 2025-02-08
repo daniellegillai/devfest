@@ -1,12 +1,9 @@
 .textbox {
-    background-color: #e45a1a9d; /* Light blue background */
-    width: 400px; /* Width of the text box */
-    padding: 20px; /* Padding inside the text box */
-    font-size: 20px; /* Font size of the text */
-    border: 2px solid #ccc; /* Border around the text box */
+    font-size: 50px; /* Font size of the text */
     text-align: center; /* Center the text */
     margin: 20px auto; /* Center the text box on the page */
-    border-radius: 10px; /* Rounded corners */
+    font-family: 'Poppins', sans-serif; /* Font family */ 
+    color: white; /* White text */
 }
 .center-text {
     text-align: center;
@@ -18,14 +15,20 @@ body {
     justify-content: center; /* Centers the button horizontally */
     align-items: center; /* Centers the button vertically */
     margin: 0;
+    flex-direction: column;
+    color: white; /* White text */
+    
 }
 
 .button-container {
     text-align: center;
+    gap: 20px; /* Space between the buttons */
+    display: flex;
+    flex-direction: column;
 }
 
 .btn {
-    background-color: #4CAF50; /* Green background */
+    background-color: #c55221; /* Green background */
     color: white; /* White text */
     padding: 15px 32px; /* Padding inside the button */
     font-size: 16px; /* Font size */
@@ -33,8 +36,10 @@ body {
     cursor: pointer; /* Show pointer cursor on hover */
     border-radius: 8px; /* Rounded corners */
     text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Padding inside the button */
+   
 }
 
 .btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #e75f0a; /* Darker green on hover */
 }
