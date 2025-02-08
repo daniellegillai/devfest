@@ -18,18 +18,82 @@
 </header>
 
 <body style="background-color: rgba(255, 212, 198, 0.938);">
+   <div class = "row">
+        <div class = "side">
+            <button class="open-modal" data-modal="modalLeftArm">Left Arm</button>
+            <button class="open-modal" data-modal="modalLeftLeg">Left Leg</button>
+        </div>
+        <div class="center">
+            <button class="open-modal" data-modal="modalHead">Head</button>
+            <button class="open-modal" data-modal="modalHeart">Heart</button>
+            <button class="open-modal" data-modal="modalLung">Respiratory</button>
+            <button class="open-modal" data-modal="modalStom">Stomach</button>
+        </div>
+        <div class = "side">
+            <button class="open-modal" data-modal="modalRightArm">Right Arm</button>
+            <button class="open-modal" data-modal="modalRightLeg">Right Leg</button>
+        </div>
+    </div>  
 
- <button id="modalButton" class = "button1">Open Modal</button>
- 
- <!-- The Modal -->
- <div id="myModal" class="modal">
-     <!-- Modal content -->
-     <div class="modal-content">
-         <span class="close">&times;</span>
-         <p>Some text in the Modal..</p>
-     </div>
- </div>
- <script src="../scripts/button1script.js"></script>
+    <div id="modalHead" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalHead">&times;</span>
+            <p>Information about head, brain, and mental health</p>
+        </div>
+    </div>
+
+    <div id="modalHeart" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalHeart">&times;</span>
+            <p>Information about heart health</p>
+        </div>
+    </div>
+
+    <div id="modalLung" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalLung">&times;</span>
+            <p>Information about lung, throat, and respiratory health</p>
+        </div>
+    </div>
+
+    <div id="modalStom" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalStom">&times;</span>
+            <p>Information about stomach and intestines health</p>
+        </div>
+    </div>
+
+    <div id="modalLeftArm" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalLeftArm">&times;</span>
+            <p>Information about left arm and hand health</p>
+        </div>
+    </div>
+
+    <div id="modalLeftLeg" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalLeftLeg">&times;</span>
+            <p>Information about left leg and foot health</p>
+        </div>
+    </div>
+
+    <div id="modalRightArm" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalRightArm">&times;</span>
+            <p>Information about right arm and hand health</p>
+        </div>
+    </div>
+
+    <div id="modalRightLeg" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalRightLeg">&times;</span>
+            <p>Information about right leg and foot health</p>
+        </div>
+    </div>
+
+    <script src="../scripts/modalscript.js"></script>
+
+   
 </body>
 
 </html>

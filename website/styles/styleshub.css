@@ -27,13 +27,39 @@ nav {
       }
 }
 
-.button1 {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+.row {
+  display:flex;
+  flex-direction: row;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  gap: 100px;
+    
+  .side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 300px;
+      gap: 200px; 
+    }
+    
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top:0px;
+      gap: 50px; 
+    }
+    
+    .open-modal{
+      font-size:20px;
+      width: 100%;
+      background-color: #B5828C;
+      color: white;
+      border-color: #B5828C;
+      font-family: 'Times New Roman', Times, serif;
+  }
 }
+
 
 /* The Modal (background) */
 .modal {
