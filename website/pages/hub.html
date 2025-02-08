@@ -18,23 +18,41 @@
     </nav>
 </header>
 
-<body style="background-color: rgba(255, 212, 198, 0.938);">
-   <div class = "row">
-        <div class = "side">
+<body style="background-color: rgba(255, 212, 198, 0.938);">    
+   
+    <div class = "row" id = "r">
+        <div class = "left">
+            <button class="open-modal" data-modal="modalHead">Head</button>
             <button class="open-modal" data-modal="modalLeftArm">Left Arm</button>
             <button class="open-modal" data-modal="modalLeftLeg">Left Leg</button>
         </div>
         <div class="center">
-            <button class="open-modal" data-modal="modalHead">Head</button>
             <button class="open-modal" data-modal="modalHeart">Heart</button>
             <button class="open-modal" data-modal="modalLung">Respiratory</button>
             <button class="open-modal" data-modal="modalStom">Stomach</button>
         </div>
-        <div class = "side">
+        <div class = "right">
             <button class="open-modal" data-modal="modalRightArm">Right Arm</button>
             <button class="open-modal" data-modal="modalRightLeg">Right Leg</button>
         </div>
     </div>  
+
+    <img id="displayedImage" src="" alt="Selected Image" style="display: none; width: 300px;">
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("r");
+            const imageElement = document.getElementById("displayedImage");
+            const savedImage = localStorage.getItem("selectedImage"); // Retrieve image
+          
+            if (savedImage) {
+                imageElement.src = "images/" + savedImage;
+                container.style.backgroundImage = `url(${imageElement.src})`;
+            } else {
+                imageElement.alt = "No image selected.";
+            }
+        });
+    </script>
 
     <div id="modalHead" class="modal">
         <div class="modal-content">

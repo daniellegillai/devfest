@@ -32,35 +32,49 @@ nav {
   display:flex;
   flex-direction: row;
   justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  gap: 100px;
+  gap: 50px;
+  background-size: contain;  /* Makes sure the image covers the entire container */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat;
+  height: 80vw;
+  width: 100vw;
     
-  .side {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 300px;
-      gap: 200px; 
-    }
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+    gap: 20%; 
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 33%;
+    gap: 30%; 
+  }
     
-    .center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top:0px;
-      gap: 50px; 
-    }
-    
-    .open-modal{
-      font-size:20px;
-      width: 100%;
-      padding: 10px 20px;
-      background-color: #d54865;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   }
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:28%;
+    gap: 7%; 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .open-modal{
+    font-size:20px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #d54865;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
 
   .open-modal:hover{
     
