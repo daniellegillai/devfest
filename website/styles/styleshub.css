@@ -36,14 +36,14 @@ nav {
   background-size: contain;  /* Makes sure the image covers the entire container */
   background-position: center;  /* Centers the image */
   background-repeat: no-repeat;
-  height: 80vw;
+  height: min(700px, 80vw);
   width: 100vw;
     
   .left {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 15%;
+    margin-top: 130px;
     gap: 20%; 
   }
 
@@ -51,7 +51,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 33%;
+    margin-top: 290px;
     gap: 30%; 
   }
     
@@ -59,7 +59,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:28%;
+    margin-top:270px;
     gap: 7%; 
     background-size: cover;
     background-position: center;
