@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: block;
+        }
+
+        .select-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .select-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+    <script>
+        function selectImage(imageName) {
+            localStorage.setItem('selectedImage', imageName);
+            window.location.href = 'hub.html';
+        }
+    </script>
+</head>
+<body style="background-color: rgba(255, 212, 198, 0.938);">
+    <h1>Image Selection</h1>
+    <div class="image-grid">
+        <div class="image-container">
+            <img src="images/Man1.jpg" alt="Image 1">
+            <button class="select-btn" onclick="selectImage('Man1.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Man2.jpg" alt="Image 2">
+            <button class="select-btn" onclick="selectImage('Man2.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Man3.jpg" alt="Image 3">
+            <button class="select-btn" onclick="selectImage('Man3.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Man4.jpg" alt="Image 4">
+            <button class="select-btn" onclick="selectImage('Man4.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Girl1.jpg" alt="Image 5">
+            <button class="select-btn" onclick="selectImage('Girl1.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Girl2.jpg" alt="Image 6">
+            <button class="select-btn" onclick="selectImage('Girl2.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Girl3.jpg" alt="Image 7">
+            <button class="select-btn" onclick="selectImage('Girl3.jpg')">Select</button>
+        </div>
+        <div class="image-container">
+            <img src="images/Girl4.jpg" alt="Image 8">
+            <button class="select-btn" onclick="selectImage('Girl4jpg')">Select</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+     
