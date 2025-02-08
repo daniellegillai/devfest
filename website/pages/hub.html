@@ -54,9 +54,19 @@
         });
     </script>
 
+    <div class = "name">
+        <h1 id = nameheader></h1>
+    </div>
+
     <script>
-        const savedName = localStorage.getItem("selectedImage"); // Retrieve image
+        const header = document.getElementById("nameheader"); // Get the header element
+        const savedName = localStorage.getItem("username"); // Retrieve username
+        if (savedName) {
+            header.textContent = savedName;
+        }
     </script>
+
+
 
     <div id="modalHead" class="modal">
         <div class="modal-content">
