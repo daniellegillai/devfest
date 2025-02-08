@@ -39,7 +39,7 @@
             height: 850px;
             object-fit: cover;
             display: block;
-            border: 2px solid black;
+            border: 2px solid #E5989B;
         }
 
         .select-btn {
@@ -57,6 +57,20 @@
             background-color: #0056b3;
         }
 
+        .rounded-text {
+            background-color: #E5989B;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            display: inline-block;
+            
+
+        }
+
+        .h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+        }
         
 
         @media (max-width: 768px) {
@@ -79,8 +93,22 @@
     </script>
 </head>
 <body style="background-color: rgba(255, 212, 198, 0.938);">
-    <h1>Image Selection</h1>
-    <div class="image-grid">
+    <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" class="rounded-text">Select your image</h1>
+    <h2 class="h2">Type your name in the box below</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <button onclick="saveUsername()">Submit</button>
+
+    <script>
+        function saveUsername() {
+            let username = document.getElementById("username").value;
+            localStorage.setItem("username", username); // Store username
+            window.location.href = "welcome.html"; // Redirect to next page
+        }
+    </script>
+    
+    <p style="color: white;">Click "Select" on the image that you prefer</p>
+   
+   <div class="image-grid">
         <div class="image-container">
             <img src="images/Man1.jpg" alt="Image 1">
             <button class="select-btn" onclick="selectImage('Man1.jpg')">Select</button>
