@@ -95,14 +95,14 @@
 <body style="background-color: rgba(255, 212, 198, 0.938);">
     <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" class="rounded-text">Select your image</h1>
     <h2 class="h2">Type your name in the box below</h2>
-    <input type="text" id="username" placeholder="Enter username">
+    <input type="text" id="username" placeholder="Enter your name">
     <button onclick="saveUsername()">Submit</button>
 
     <script>
         function saveUsername() {
             let username = document.getElementById("username").value;
             localStorage.setItem("username", username); // Store username
-            window.location.href = "welcome.html"; // Redirect to next page
+            window.location.href = "hub.html"; // Redirect to next page
         }
     </script>
     
