@@ -1,93 +1,55 @@
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from pymongo import MongoClient
+from bson import ObjectId
+from bson.json_util import dumps
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from motor import motor_asyncio
-from typing import List
+app = Flask(__name__)
+CORS(app)
 
-# Initialize the FastAPI app
-app = FastAPI()
+# Connect to MongoDB (adjust the URI as needed)
+client = MongoClient("mongodb+srv://ibrigido:devFest2025@cluster0.c6gcg.mongodb.net/health_tracker?retryWrites=true&w=majority")
+db = client["health_tracker"]  # You can name your DB as you like
+collection = db["body_parts"]  # This collection will hold your body parts and their data
 
-# Initialize the MongoDB client
-client = motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017/")
-db = client["healthcare_database"]
-collection = db["healthcare_data"]
+@app.route("/body_parts/", methods=["POST"])
+def create_body_part():
+    try:
+        body_part = request.json
+        result = collection.insert_one(body_part)
+        return jsonify({"message": "Body part created successfully", "id": str(result.inserted_id)})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# Define the BodyPart model
-class BodyPart(BaseModel):
-    id: str
-    name: str
-    data: List[str]
+@app.route("/body_parts/", methods=["GET"])
+def get_body_parts():
+    try:
+        body_parts = list(collection.find())
+        return dumps(body_parts), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# Define the HealthcareData model
-class HealthcareData(BaseModel):
-    id: str
-    body_part_id: str
-    data: str
+@app.route("/body_parts/<body_part_id>", methods=["GET"])
+def get_body_part(body_part_id):
+    try:
+        body_part = collection.find_one({"_id": ObjectId(body_part_id)})
+        if body_part:
+            return dumps(body_part), 200
+        else:
+            return jsonify({"error": "Body part not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# Define the endpoint to create a new body part
-@app.post("/body_parts/")
-async def create_body_part(body_part: BodyPart):
-    result = await collection.insert_one({"id": body_part.id, "name": body_part.name, "data": body_part.data})
-    return {"message": "Body part created successfully"}
+@app.route("/body_parts/<body_part_id>", methods=["DELETE"])
+def delete_body_part(body_part_id):
+    try:
+        result = collection.delete_one({"_id": ObjectId(body_part_id)})
+        if result.deleted_count > 0:
+            return jsonify({"message": "Body part deleted successfully"}), 200
+        else:
+            return jsonify({"error": "Body part not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# Define the endpoint to get all body parts
-@app.get("/body_parts/")
-async def get_body_parts():
-    body_parts = await collection.find().to_list(1000)
-    return body_parts
-
-# Define the endpoint to get a specific body part
-@app.get("/body_parts/{body_part_id}")
-async def get_body_part(body_part_id: str):
-    body_part = await collection.find_one({"id": body_part_id})
-    if body_part is None:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return body_part
-
-# Define the endpoint to update a body part
-@app.put("/body_parts/{body_part_id}")
-async def update_body_part(body_part_id: str, body_part: BodyPart):
-    result = await collection.update_one({"id": body_part_id}, {"$set": {"name": body_part.name, "data": body_part.data}})
-    if result.matched_count == 0:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return {"message": "Body part updated successfully"}
-
-# Define the endpoint to delete a body part
-@app.delete("/body_parts/{body_part_id}")
-async def delete_body_part(body_part_id: str):
-    result = await collection.delete_one({"id": body_part_id})
-    if result.deleted_count == 0:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return {"message": "Body part deleted successfully"}
-
-# Define the endpoint to create new healthcare data for a body part
-@app.post("/healthcare_data/")
-async def create_healthcare_data(healthcare_data: HealthcareData):
-    result = await collection.update_one({"id": healthcare_data.body_part_id}, {"$push": {"data": healthcare_data.data}})
-    if result.matched_count == 0:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return {"message": "Healthcare data created successfully"}
-
-# Define the endpoint to get all healthcare data for a body part
-@app.get("/healthcare_data/{body_part_id}")
-async def get_healthcare_data(body_part_id: str):
-    body_part = await collection.find_one({"id": body_part_id})
-    if body_part is None:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return body_part["data"]
-
-# Define the endpoint to update healthcare data for a body part
-@app.put("/healthcare_data/{body_part_id}/{data_id}")
-async def update_healthcare_data(body_part_id: str, data_id: int, healthcare_data: HealthcareData):
-    result = await collection.update_one({"id": body_part_id}, {"$set": {f"data.{data_id}": healthcare_data.data}})
-    if result.matched_count == 0:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return {"message": "Healthcare data updated successfully"}
-
-# Define the endpoint to delete healthcare data for a body part
-@app.delete("/healthcare_data/{body_part_id}/{data_id}")
-async def delete_healthcare_data(body_part_id: str, data_id: int):
-    result = await collection.update_one({"id": body_part_id}, {"$pull": {"data": {"$slice": [data_id, 1]}}})
-    if result.matched_count == 0:
-        raise HTTPException(status_code=404, detail="Body part not found")
-    return {"message": "Healthcare data deleted successfully"}
+if __name__ == "__main__":
+    app.run(port=7777)
