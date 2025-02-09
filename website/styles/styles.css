@@ -56,6 +56,15 @@ h1 {
     text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff3333, 0 0 15px #ff1a1a, 0 0 20px #cc0000;
 }
 
+.question {
+    font-size: 30px; /* Font size of the question */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the question */
+    margin: 20px auto; /* Center the question on the page */
+    font-family: 'Poppins', sans-serif; /* Font family */
+    color: white; /* White text */
+}
+
 
 
 
