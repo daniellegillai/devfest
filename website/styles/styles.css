@@ -43,3 +43,8 @@ body {
 .btn:hover {
     background-color: #e75f0a; /* Darker green on hover */
 }
+
+.small-image {
+    width: 800px; /* Width of the image */
+    height: auto;
+}
