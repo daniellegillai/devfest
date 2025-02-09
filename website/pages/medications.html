@@ -26,19 +26,192 @@
     <div class="medcontainer">
         <div class="sticky"> 
             <img src="images/pill.jpg" class = "pill">
-            <form>
+            <form id="myForm">
                 <label for="mname">Medication name:</label><br>
                 <input type="text" id="mname" name="fname"><br>
                 <label for="iname">Instructions:</label><br>
-                <textarea name="instructions" rows="10" cols="20"></textarea>
+                <textarea id = "iname" name="instructions" rows="10" cols="20"></textarea><br>
+                <label for="dater">Date:</label><br>
+                <input type="date" id = "dater"><br>
                 <br>
                 <input type="submit" value="Save">
+            </form>
+            <p id="output" class="hidden"></p> <!-- This will show submitted text -->
         </div>
-        <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
-        <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
-        <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
-        <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
-        <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
+        <div class="sticky"><img src="images/pill.jpg" class = "pill">
+            <form id="myForm2">
+                <label for="mname2">Medication name:</label><br>
+                <input type="text" id="mname2" name="fname2"><br>
+                <label for="iname2">Instructions:</label><br>
+                <textarea id = "iname2" name="instructions" rows="10" cols="20"></textarea><br>
+                <label for="dater2">Date:</label><br>
+                <input type="date"2 id = "dater"><br>
+                <br>
+                <input type="submit" value="Save">
+            </form>
+            <p id="output2" class="hidden"></p> <!-- This will show submitted text -->
+        </div>
+        <div class="sticky"><img src="images/pill.jpg" class = "pill">
+            <form id="myForm3">
+                <label for="mname3">Medication name:</label><br>
+                <input type="text" id="mname3" name="fname3"><br>
+                <label for="iname3">Instructions:</label><br>
+                <textarea id = "iname3" name="instructions" rows="10" cols="20"></textarea><br>
+                <label for="dater3">Date:</label><br>
+                <input type="date" id = "dater3"><br>
+                <br>
+                <input type="submit" value="Save">
+            </form>
+            <p id="output3" class="hidden"></p> <!-- This will show submitted text -->
+            </div>
+        <div class="sticky"><img src="images/pill.jpg" class = "pill">
+            <form id="myForm4">
+                <label for="mname4">Medication name:</label><br>
+                <input type="text" id="mname4" name="fname4"><br>
+                <label for="iname4">Instructions:</label><br>
+                <textarea id = "iname4" name="instructions" rows="10" cols="20"></textarea><br>
+                <label for="dater4">Date:</label><br>
+                <input type="date" id = "dater4"><br>
+                <br>
+                <input type="submit" value="Save">
+            </form>
+            <p id="output4" class="hidden"></p> <!-- This will show submitted text -->
+        </div>
+        <div class="sticky"><img src="images/pill.jpg" class = "pill">
+            <form id="myForm5">
+                <label for="mname5">Medication name:</label><br>
+                <input type="text" id="mname5" name="fname5"><br>
+                <label for="iname">Instructions:</label><br>
+                <textarea id = "iname5" name="instructions" rows="10" cols="20"></textarea><br>
+                <label for="dater5">Date:</label><br>
+                <input type="date" id = "dater5"><br>
+                <br>
+                <input type="submit" value="Save">
+            </form>
+            <p id="output5" class="hidden"></p> <!-- This will show submitted text --></div>
+        <div class="sticky"><img src="images/pill.jpg" class = "pill"> 
+            <form id="myForm6">
+            <label for="mname6">Medication name:</label><br>
+            <input type="text" id="mname6" name="fname6"><br>
+            <label for="iname6">Instructions:</label><br>
+            <textarea id = "iname6" name="instructions" rows="10" cols="20"></textarea><br>
+            <label for="dater6">Date:</label><br>
+            <input type="date" id = "dater6"><br>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+        <p id="output6" class="hidden"></p> <!-- This will show submitted text --></div>
       </div>
+
+      <script>
+          document.getElementById("myForm").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+  
+              // Get user input
+              let name = document.getElementById("mname").value;
+              let instructions = document.getElementById("iname").value;
+              let date = document.getElementById("dater").value;
+  
+              // Hide the form
+              document.getElementById("myForm").classList.add("hidden");
+  
+              // Show the output paragraph with the submitted name
+              document.getElementById("output").innerHTML = "<b>Medication: </b>" + name + 
+                            "<br><br><b>Instructions: </b>" + instructions +
+                            "<br><br><b>Date: </b>" + date;
+              document.getElementById("output").classList.remove("hidden");
+          });
+
+          document.getElementById("myForm2").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+  
+              // Get user input
+              let name = document.getElementById("mname2").value;
+              let instructions = document.getElementById("iname2").value;
+              let date = document.getElementById("dater2").value;
+  
+              // Hide the form
+              document.getElementById("myForm2").classList.add("hidden");
+  
+              // Show the output paragraph with the submitted name
+              document.getElementById("output2").innerHTML = "<b>Medication: </b>" + name + 
+                            "<br><br><b>Instructions: </b>" + instructions +
+                            "<br><br><b>Date: </b>" + date;
+              document.getElementById("output2").classList.remove("hidden");
+          });
+
+          document.getElementById("myForm3").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+  
+              // Get user input
+              let name = document.getElementById("mname3").value;
+              let instructions = document.getElementById("iname3").value;
+              let date = document.getElementById("dater3").value;
+  
+              // Hide the form
+              document.getElementById("myForm3").classList.add("hidden");
+  
+              // Show the output paragraph with the submitted name
+              document.getElementById("output3").innerHTML = "<b>Medication: </b>" + name + 
+                            "<br><br><b>Instructions: </b>" + instructions +
+                            "<br><br><b>Date: </b>" + date;
+              document.getElementById("output3").classList.remove("hidden");
+          });
+
+          document.getElementById("myForm4").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+  
+              // Get user input
+              let name = document.getElementById("mname4").value;
+              let instructions = document.getElementById("iname4").value;
+              let date = document.getElementById("dater4").value;
+  
+              // Hide the form
+              document.getElementById("myForm4").classList.add("hidden");
+  
+              // Show the output paragraph with the submitted name
+              document.getElementById("output4").innerHTML = "<b>Medication: </b>" + name + 
+                            "<br><br><b>Instructions: </b>" + instructions +
+                            "<br><br><b>Date: </b>" + date;
+              document.getElementById("output4").classList.remove("hidden");
+          });
+
+          document.getElementById("myForm5").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+  
+              // Get user input
+              let name = document.getElementById("mname5").value;
+              let instructions = document.getElementById("iname5").value;
+              let date = document.getElementById("dater5").value;
+  
+              // Hide the form
+              document.getElementById("myForm5").classList.add("hidden");
+  
+              // Show the output paragraph with the submitted name
+              document.getElementById("output5").innerHTML = "<b>Medication: </b>" + name + 
+                            "<br><br><b>Instructions: </b>" + instructions +
+                            "<br><br><b>Date: </b>" + date;
+              document.getElementById("output5").classList.remove("hidden");
+          });
+
+          document.getElementById("myForm6").addEventListener("submit", function(event) {
+              event.preventDefault(); // Prevent page refresh
+  
+              // Get user input
+              let name = document.getElementById("mname6").value;
+              let instructions = document.getElementById("iname6").value;
+              let date = document.getElementById("dater6").value;
+  
+              // Hide the form
+              document.getElementById("myForm6").classList.add("hidden");
+  
+              // Show the output paragraph with the submitted name
+              document.getElementById("output6").innerHTML = "<b>Medication: </b>" + name + 
+                            "<br><br><b>Instructions: </b>" + instructions +
+                            "<br><br><b>Date: </b>" + date;
+              document.getElementById("output6").classList.remove("hidden");
+          });
+      </script>
+
 </body>
 </html>

@@ -65,7 +65,7 @@ nav {
 
 form {
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 5px;
     color: #8e2b3f;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -74,9 +74,72 @@ form {
 input[type="submit"] {
     background-color: white;
     color: #8e2b3f; /* Change text color */
-    padding: 10px 20px; /* Add spacing */
+    padding: 5px 20px; /* Add spacing */
     border-radius: 3px; /* Add rounded corners */
     border: 1px solid black;
     cursor: pointer; /* Show pointer cursor */
     font-size: large;
+}
+
+.hidden {
+    display: none; /* Hide elements */
+}
+#output {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: 8e2b3f;
+}
+
+#output2 {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: 8e2b3f;
+}
+
+#output3 {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: 8e2b3f;
+}
+
+#output4 {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: 8e2b3f;
+}
+
+#output5 {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: 8e2b3f;
+}
+
+#output6 {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: 8e2b3f;
 }
