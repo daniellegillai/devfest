@@ -40,9 +40,11 @@ HealthHub is an interactive web application designed to make health data more en
 
 * medications.html – Medications and prescriptions page.
 
-* backend/ – Python-based backend to handle data storage with MongoDB.
+* main.py – Python-based backend to handle data storage with MongoDB.
 
-* assets/ – Contains images, styles, and scripts.
+* styles/ scripts/ and /images – images, scripts, and styles for accessible and aesthetic interface.
+
+
 
 **Future Enhancements**
 
