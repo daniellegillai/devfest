@@ -8,11 +8,19 @@ function getAllBodyParts(){
 
 function addHistoryEntry() {
     const bodyPartId = document.getElementById('addHistoryPartId').value;
-    const eventDescription = document.getElementById('addHistoryPartId').value;
+    //const eventDescription = document.getElementById('addHistoryPartId').value;
+    const date = document.getElementById('historyDate').value;
+
+    if(!bodyPartId || !date) { //this gives an alert if the user doesn't input something 
+        alert("Please fill all fields before submitting");
+        return; 
+    }
+
     const historyDetails = {
         date: date,
-        event: eventDescription
+        event: bodyPartId
     };
+
 
     fetch(`http://localhost:7777/body_parts/history/add/${bodyPartId}`, { 
         method: 'POST',
