@@ -154,4 +154,29 @@ nav {
   align-items: center;
 }
 
+#addHistoryPartId{
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
 
+/*Medications page*/
+.pill {
+  height: 50px;
+}
+.medcontainer {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;  /* Allows items to wrap to the next row */
+  gap: 10px;  /* Adds space between items */
+}
+
+.sticky {
+  width: calc(33% - 30px);  /* Each item takes half the width, minus gap */
+  height: 350px;  /* Set a fixed height */
+  background-color: #ffe0ae;
+  padding-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  font-size: 20px;
+}
