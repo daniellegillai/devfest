@@ -83,6 +83,7 @@ nav {
 
 .name {
   display: flex;
+  margin-top: -60px;
   justify-content: center; /* Centers horizontally */
   color: white;
   font-size:150%;
@@ -219,4 +220,20 @@ form button:hover {
   margin: 20px auto; /* Center the text box on the page */
   font-family: 'Poppins', sans-serif; /* Font family */ 
   color: white; /* White text */
+}
+
+.text-container{
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
+  text-align: center;
+  font-size: 18px;    
+  font-weight: bold;
+  color: white;
+  background: #F18181;
+  padding: 5px 10px;
+  border-radius: 15px;
+
 }
