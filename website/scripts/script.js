@@ -22,6 +22,7 @@ function addHistoryEntry() {
     .then(response => response.json())
     .then(data => {
         if (data.message) {
+            console.log('History added successfully:', data);
             alert('History added successfully: ' + data.message);
         } else {
             throw new Error('Failed to add history: ' + (data.error || 'Unknown error'));
@@ -37,7 +38,7 @@ function addHistoryEntry() {
 
 function updateHistoryEntry() {
     const bodyPartId = document.getElementById('updateHistoryPartId').value;
-    const index = document.getElementById('historyIndex').value;  // Ensure the ID matches your HTML
+    const index = document.getElementById('historyIndex').value;
     const newHistoryData = {
         notes: document.getElementById('updateHistoryNote').value
     };
@@ -47,12 +48,21 @@ function updateHistoryEntry() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ index: index, new_data: newHistoryData })
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        alert('History updated: ' + JSON.stringify(data));
+    .then(response => {
+        if (response.ok) {
+            return response.json();  // Only parse JSON if the response is OK.
+        } else {
+            throw new Error('Failed to update history. Status: ' + response.status);
+        }
     })
-    .catch(error => console.error('Error:', error));
+    .then(data => {
+        console.log('History updated successfully:', data);  // Detailed log for debugging
+        alert('History updated successfully: ' + JSON.stringify(data));
+    })
+    .catch(error => {
+        console.error('Error updating history:', error);  // Detailed error logging
+        alert('Error updating history: ' + error.message);
+    });
 }
 
 
