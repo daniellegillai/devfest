@@ -84,7 +84,7 @@ nav {
 .name {
   display: flex;
   justify-content: center; /* Centers horizontally */
-  color: #8e2b3f;
+  color: white;
   font-size:150%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
