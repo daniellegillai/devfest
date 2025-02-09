@@ -1,0 +1,82 @@
+nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #E5989B;
+        font-size: larger;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        font-size:larger;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      
+      li a:hover {
+        background-color: #a7727d;
+      }
+}
+.pill {
+    height: 50px;
+  }
+  .medcontainer {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;  /* Allows items to wrap to the next row */
+    gap: 10px;  /* Adds space between items */
+  }
+  
+  .sticky {
+    width: calc(33% - 30px);  /* Each item takes half the width, minus gap */
+    height: 350px;  /* Set a fixed height */
+    background-color: #ffe0ae;
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    font-size: 20px;
+  }
+
+  .nav-logo {
+    height: 50px; /* Adjust size */
+    width: auto;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.textbox {
+    font-size: 50px; /* Font size of the text */
+    text-align: center; /* Center the text */
+    margin: 20px auto; /* Center the text box on the page */
+    font-family: 'Poppins', sans-serif; /* Font family */ 
+    color: white; /* White text */
+  }
+
+form {
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #8e2b3f;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input[type="submit"] {
+    background-color: white;
+    color: #8e2b3f; /* Change text color */
+    padding: 10px 20px; /* Add spacing */
+    border-radius: 3px; /* Add rounded corners */
+    border: 1px solid black;
+    cursor: pointer; /* Show pointer cursor */
+    font-size: large;
+}

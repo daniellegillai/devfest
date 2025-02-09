@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../styles/styleshub.css">
+    <link rel="stylesheet" href="../styles/med.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prescriptions</title>
@@ -24,7 +24,16 @@
         HealthHub Medications
     </h1> 
     <div class="medcontainer">
-        <div class="sticky"> <img src="images/pill.jpg" class = "pill"></div>
+        <div class="sticky"> 
+            <img src="images/pill.jpg" class = "pill">
+            <form>
+                <label for="mname">Medication name:</label><br>
+                <input type="text" id="mname" name="fname"><br>
+                <label for="iname">Instructions:</label><br>
+                <textarea name="instructions" rows="10" cols="20"></textarea>
+                <br>
+                <input type="submit" value="Save">
+        </div>
         <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
         <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>
         <div class="sticky"><img src="images/pill.jpg" class = "pill"></div>

@@ -161,27 +161,6 @@ nav {
   align-items: center;
 }
 
-/*Medications page*/
-.pill {
-  height: 50px;
-}
-.medcontainer {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;  /* Allows items to wrap to the next row */
-  gap: 10px;  /* Adds space between items */
-}
-
-.sticky {
-  width: calc(33% - 30px);  /* Each item takes half the width, minus gap */
-  height: 350px;  /* Set a fixed height */
-  background-color: #ffe0ae;
-  padding-top: 20px;
-  padding-left: 20px;
-  display: flex;
-  font-size: 20px;
-}
-
 form {
   display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -214,13 +193,7 @@ form button:hover {
   background-color: #F8B7B4;
 }
 
-.textbox {
-  font-size: 50px; /* Font size of the text */
-  text-align: center; /* Center the text */
-  margin: 20px auto; /* Center the text box on the page */
-  font-family: 'Poppins', sans-serif; /* Font family */ 
-  color: white; /* White text */
-}
+
 
 .text-container{
   position: absolute;
