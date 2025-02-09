@@ -8,9 +8,10 @@ function getAllBodyParts(){
 
 function addHistoryEntry() {
     const bodyPartId = document.getElementById('addHistoryPartId').value;
+    const eventDescription = document.getElementById('addHistoryPartId').value;
     const historyDetails = {
-        date: new Date().toISOString().split('T')[0],
-        notes: document.getElementById('historyNote').value
+        date: date,
+        event: eventDescription
     };
 
     fetch(`http://localhost:7777/body_parts/history/add/${bodyPartId}`, { 
@@ -20,11 +21,18 @@ function addHistoryEntry() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        alert('History added: ' + JSON.stringify(data));
+        if (data.message) {
+            alert('History added successfully: ' + data.message);
+        } else {
+            throw new Error('Failed to add history: ' + (data.error || 'Unknown error'));
+        }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error adding history: ' + error.message);
+    });
 }
+
 
 
 function updateHistoryEntry() {
