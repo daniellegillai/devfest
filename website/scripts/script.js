@@ -1,28 +1,28 @@
 function getAllBodyParts(){
-    fetch('http://localhost:7777/body_parts/', {method: 'GET'})
+    fetch('http://localhost:7778/body_parts/', {method: 'GET'})
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error('Error: ', error));
 }
 
 
-function addHistoryEntry() {
-    const bodyPartId = document.getElementById('addHistoryPartId').value;
-    //const eventDescription = document.getElementById('addHistoryPartId').value;
-    const date = document.getElementById('historyDate').value;
+function addHistoryEntry(id_part) {
+    const bodyPartId = id_part
+    const eventDescription = document.getElementById('addHistoryPartId').value;
+    const date = document.getElementById('historyNote').value;
 
-    if(!bodyPartId || !date) { //this gives an alert if the user doesn't input something 
+    if(!eventDescription || !date) { //this gives an alert if the user doesn't input something 
         alert("Please fill all fields before submitting");
         return; 
     }
-
+    
     const historyDetails = {
         date: date,
-        event: bodyPartId
+        event: eventDescription
     };
 
 
-    fetch(`http://localhost:7777/body_parts/history/add/${bodyPartId}`, { 
+    fetch(`http://localhost:7778/body_parts/history/add/${bodyPartId}`, { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(historyDetails)
@@ -32,6 +32,8 @@ function addHistoryEntry() {
         if (data.message) {
             console.log('History added successfully:', data);
             alert('History added successfully: ' + data.message);
+
+            updateHistoryOnPage(date, eventDescription);
         } else {
             throw new Error('Failed to add history: ' + (data.error || 'Unknown error'));
         }
@@ -42,6 +44,13 @@ function addHistoryEntry() {
     });
 }
 
+// function updateHistoryOnPage(date, description) {
+//     const historyList = document.getElementById('historyList'); // Ensure you have an element with this id in your HTML
+//     const entry = document.createElement('div');
+//     entry.textContent = `Date: ${date}, Event: ${description}`;
+//     historyList.appendChild(entry);
+// }
+
 
 
 function updateHistoryEntry() {
@@ -51,7 +60,7 @@ function updateHistoryEntry() {
         notes: document.getElementById('updateHistoryNote').value
     };
 
-    fetch(`http://localhost:7777/body_parts/history/update/${bodyPartId}`, {
+    fetch(`http://localhost:7778/body_parts/history/update/${bodyPartId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ index: index, new_data: newHistoryData })
@@ -82,7 +91,7 @@ function removeHistoryEntry() {
         date: historyDate
     };
 
-    fetch(`http://localhost:7777/body_parts/history/remove/${bodyPartId}`, {  // Corrected the template literal
+    fetch(`http://localhost:7778/body_parts/history/remove/${bodyPartId}`, {  // Corrected the template literal
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(entryCriteria)
@@ -98,6 +107,3 @@ function removeHistoryEntry() {
     })
     .catch(error => console.error('Error:', error));
 }
-
-
-

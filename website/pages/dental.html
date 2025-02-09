@@ -1,60 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="../styles/stylesdental.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental</title>
+    <title>Dental Health</title>
 </head>
-<header>
-    <nav id = "navbar">
-        <ul>
-            <li><a href="../index.html">Login</a></li>
-            <li><a href="hub.html">Hub</a></li>
-            <li><a href="dental.html">Dental</a></li>
-            <li><a href="optical.html">Optical</a></li>
-            <li><a href="medications.html">Medications</a></li>
-        </ul>
-        <img src="images/logo.png" alt="logo" id="logo" class="nav-logo">
-    </nav>
-</header>
-
 <body style="background-color: rgba(255, 212, 198, 0.938);">
-    <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" , class="textbox">
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="../index.html">Login</a></li>
+                <li><a href="hub.html">Hub</a></li>
+                <li><a href="dental.html">Dental</a></li>
+                <li><a href="optical.html">Optical</a></li>
+                <li><a href="medications.html">Medications</a></li>
+            </ul>
+            <img src="images/logo.png" alt="logo" id="logo" class="nav-logo">
+        </nav>
+    </header>
+
+    <h1 class="textbox">
         HealthHub Dental
     </h1>  
-    <div class = "dentcontainer">
-        <div class = "side">
-            <button onclick="openModal('modalCav')">Cavities</button>
-            <button onclick="openModal('modalOr')">Oral Surgeries</button>
+    <div class="dentcontainer">
+        <div class="side">
+            <button class="open-modal" data-modal="modalCav">Cavities</button>
+            <button class="open-modal" data-modal="modalOr">Oral Surgeries</button>
         </div>
-        <img src="images/mouth.png"class="mouth">
-        <div class = "side">
-            <button onclick="openModal('modalX')">X-Rays</button>
-            <button onclick="openModal('modalDoc')">Doctor Visits</button>
+        <img src="images/mouth.png" class="mouth">
+        <div class="side">
+            <button class="open-modal" data-modal="modalX">X-Rays</button>
+            <button class="open-modal" data-modal="modalDoc">Doctor Visits</button>
         </div>
     </div>
 
+    <!-- Modal for Cavities -->
+    <div id="modalCav" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalCav">&times;</span>
+            <p>Cavities</p>
+            <form id="formCav">
+                <input type="text" id="cavHistoryPartId" placeholder="Add History" required>
+                <input type="date" id="cavHistoryNote" placeholder="Enter Date" required>
+                <button type="button" onclick="addHistoryEntry('cav')">Add History</button>
+            </form>
+        </div>
+    </div>
 
-    <div id="modalCav" class="modal" onclick="closeModal('modalCav')">
-        <div class="modal-content">Cavities</div>
+    <!-- Modal for Oral Surgeries -->
+    <div id="modalOr" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalOr">&times;</span>
+            <p>Oral Surgeries</p>
+            <form id="formOr">
+                <input type="text" id="orHistoryPartId" placeholder="Add History" required>
+                <input type="date" id="orHistoryNote" placeholder="Enter Date" required>
+                <button type="button" onclick="addHistoryEntry('or')">Add History</button>
+            </form>
+        </div>
     </div>
-    <div id="modalOr" class="modal" onclick="closeModal('modalOr')">
-        <div class="modal-content">Oral Surgeries</div>
+
+    <!-- Modal for X-Rays -->
+    <div id="modalX" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalX">&times;</span>
+            <p>X-Rays</p>
+            <form id="formX">
+                <input type="text" id="xrayHistoryPartId" placeholder="Add History" required>
+                <input type="date" id="xrayHistoryNote" placeholder="Enter Date" required>
+                <button type="button" onclick="addHistoryEntry('x')">Add History</button>
+            </form>
+        </div>
     </div>
-    <div id="modalX" class="modal" onclick="closeModal('modalX')">
-        <div class="modal-content">X - Rays</div>
+
+    <div id="modalDoc" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modalDoc">&times;</span>
+            <p>Doctor Visits</p>
+            <form id="formDoc">
+                <input type="text" id="docHistoryPartId" placeholder="Add History" required>
+                <input type="date" id="docHistoryNote" placeholder="Enter Date" required>
+                <button type="button" onclick="addHistoryEntry('doc')">Add History</button>
+            </form>
+        </div>
     </div>
-    <div id="modalDoc" class="modal" onclick="closeModal('modalDoc')">
-        <div class="modal-content">Doctor visits</div>
-    </div>
-    
+
     <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
+        document.querySelectorAll('.open-modal').forEach(button => {
+            button.onclick = function() {
+                const modal = document.getElementById(button.getAttribute('data-modal'));
+                modal.style.display = 'block';
+            };
+        });
+
+        document.querySelectorAll('.close').forEach(button => {
+            button.onclick = function() {
+                const modal = this.closest('.modal');
+                modal.style.display = 'none';
+            };
+        });
+
+        function addHistoryEntry(category) {
+            const form = document.getElementById(`form${category}`);
+            const historyPartId = document.getElementById(`${category}HistoryPartId`).value;
+            const historyNote = document.getElementById(`${category}HistoryNote`).value;
+            console.log(`Adding history for ${category}: ${historyPartId} on ${historyNote}`);
+            // call backend API to save the history
+            alert(`History for ${category} added: ${historyPartId} on ${historyNote}`);
+            form.reset(); // Clear the form after submission.
         }
     </script>
 </body>

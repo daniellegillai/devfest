@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../styles/styleshub.css">
@@ -75,11 +75,11 @@
     <div id="modalHead" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalHead">&times;</span>
-            <p> <b>All details related to the head</b> <br> Past MRI Scans, Cognetive Scans, Past Strokes</p>
+            <p>The head is the uppermost part of the human body, housing the brain, sensory organs, and essential structures responsible for various functions, including cognition, communication, and perception. It is composed of bones, muscles, nerves, and other tissues that work together to support life and interaction with the environment.</p>
             <form id = "head">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
-                <input type = "date" id = "historyDate" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6cd" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -87,11 +87,11 @@
     <div id="modalHeart" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalHeart">&times;</span>
-            <p> <b>All details related to the heart</b> <br>  Heartbeat, Blood Pressure, Past Heart attacks </p>
+            <p>Information about heart health</p>
             <form id = "heart">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6cc" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -99,11 +99,11 @@
     <div id="modalLung" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalLung">&times;</span>
-            <p> <b>All details related to the lungs</b> <br> trachea, bronchi, lungs </p>
+            <p>Information about lung, throat, and respiratory health</p>
             <form id = "lung">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6ce" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -111,11 +111,11 @@
     <div id="modalStom" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalStom">&times;</span>
-            <p> <b>All details related to the stomach and digestive organs</b> <br> Digests food and absorbs nutrients </p>
+            <p>Information about stomach and intestines health</p>
             <form id = "stomach">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6cf" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -123,12 +123,11 @@
     <div id="modalLeftArm" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalLeftArm">&times;</span>
-            <p> <b>All details related to the left arm and the hand</b> <br> bones, muscles, and nerves</p>
-            
+            <p>Information about left arm and hand health</p>
             <form id = "leftArm">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6c9" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -136,11 +135,11 @@
     <div id="modalLeftLeg" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalLeftLeg">&times;</span>
-            <p> <b>All details related to the left leg and foot health</b> <br> bones, muscles, skin, and nails.</p>
+            <p>Information about left leg and foot health</p>
             <form id = "leftLeg">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6cb" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -148,11 +147,11 @@
     <div id="modalRightArm" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalRightArm">&times;</span>
-            <p> <b>All details related to the right arm and the hand</b> <br> bones, muscles, and nerves</p>
+            <p>Information about right arm and hand health</p>
             <form id = "rightArm">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6c8" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
@@ -160,16 +159,16 @@
     <div id="modalRightLeg" class="modal">
         <div class="modal-content">
             <span class="close" data-modal="modalRightLeg">&times;</span>
-            <p> <b>All details related to the right leg and foot health</b> <br>bones, muscles, skin, and nails.</p>
+            <p>Information about right leg and foot health</p>
             <form id = "rightLeg">
                 <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
                 <input type = "date" id = "historyNote" placeholder="Enter Date" required>
-                <button type = "button" onclick = "addHistoryEntry()"> Add History </button>
+                <button type = "button" id = "67a7ae5d036e48d2f227e6ca" onclick = "addHistoryEntry(this.id)"> Add History </button>
             </form>
         </div>
     </div>
 
-    <script src="../scripts/modalscript.js"></script>
+    <script src = "../scripts/modalscript.js"></script>
     <script src = "../scripts/script.js"></script>
 
     <div id="imageContainer"></div>
@@ -177,4 +176,203 @@
    
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="../styles/styleshub.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Health Hub</title>
+</head>
+<header>
+   <nav id = "navbar">
+       <ul>
+           <li><a href="../index.html">Login</a></li>
+           <li><a href="hub.html">Hub</a></li>
+           <li><a href="dental.html">Dental</a></li>
+           <li><a href="optical.html">Optical</a></li>
+           <li><a href="medications.html">Medications</a></li>
+          
+       </ul>
+       <img src="images/logo.png" alt="logo" id="logo" class="nav-logo">
+   </nav>
+</header>
+
+
+<body style="background-color: rgba(255, 212, 198, 0.938);">   
+   <div class="text-container">
+       Click on the specific body part to add and review health history!
+   </div>
+   <div class = "row" id = "r">
+       <div class = "left">
+           <button class="open-modal" data-modal="modalHead">Head</button>
+           <button class="open-modal" data-modal="modalLeftArm">Left Arm</button>
+           <button class="open-modal" data-modal="modalLeftLeg">Left Leg</button>
+       </div>
+       <div class="center">
+           <button class="open-modal" data-modal="modalHeart">Heart</button>
+           <button class="open-modal" data-modal="modalLung">Respiratory</button>
+           <button class="open-modal" data-modal="modalStom">Stomach</button>
+       </div>
+       <div class = "right">
+           <button class="open-modal" data-modal="modalRightArm">Right Arm</button>
+           <button class="open-modal" data-modal="modalRightLeg">Right Leg</button>
+       </div>
+   </div> 
+
+
+   <img id="displayedImage" src="" alt="Selected Image" style="display: none; width: 300px;">
+ 
+   <script>
+       document.addEventListener("DOMContentLoaded", () => {
+           const container = document.getElementById("r");
+           const imageElement = document.getElementById("displayedImage");
+           const savedImage = localStorage.getItem("selectedImage"); // Retrieve image
+        
+           if (savedImage) {
+               imageElement.src = "images/" + savedImage;
+               container.style.backgroundImage = `url(${imageElement.src})`;
+           } else {
+               imageElement.alt = "No image selected.";
+           }
+       });
+   </script>
+
+
+   <div class = "name">
+       <h1 id = nameheader></h1>
+   </div>
+
+
+   <script>
+       const header = document.getElementById("nameheader"); // Get the header element
+       const savedName = localStorage.getItem("username"); // Retrieve username
+       if (savedName) {
+           header.textContent = savedName;
+       }
+   </script>
+
+
+
+
+
+
+   <div id="modalHead" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalHead">&times;</span>
+           <p>The head is the uppermost part of the human body, housing the brain, sensory organs, and essential structures responsible for various functions, including cognition, communication, and perception. It is composed of bones, muscles, nerves, and other tissues that work together to support life and interaction with the environment.</p>
+           <form id = "head">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6cd" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalHeart" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalHeart">&times;</span>
+           <p>Information about heart health</p>
+           <form id = "heart">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6cc" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalLung" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalLung">&times;</span>
+           <p>Information about lung, throat, and respiratory health</p>
+           <form id = "lung">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6ce" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalStom" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalStom">&times;</span>
+           <p>Information about stomach and intestines health</p>
+           <form id = "stomach">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6cf" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalLeftArm" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalLeftArm">&times;</span>
+           <p>Information about left arm and hand health</p>
+           <form id = "leftArm">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6c9" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalLeftLeg" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalLeftLeg">&times;</span>
+           <p>Information about left leg and foot health</p>
+           <form id = "leftLeg">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6cb" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalRightArm" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalRightArm">&times;</span>
+           <p>Information about right arm and hand health</p>
+           <form id = "rightArm">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6c8" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <div id="modalRightLeg" class="modal">
+       <div class="modal-content">
+           <span class="close" data-modal="modalRightLeg">&times;</span>
+           <p>Information about right leg and foot health</p>
+           <form id = "rightLeg">
+               <input type = "text" id = "addHistoryPartId" placeholder="Add History" required>
+               <input type = "date" id = "historyNote" placeholder="Enter Date" required>
+               <button type = "button" id = "67a7ae5d036e48d2f227e6ca" onclick = "addHistoryEntry(this.id)"> Add History </button>
+           </form>
+       </div>
+   </div>
+
+
+   <script src = "../scripts/modalscript.js"></script>
+   <script src = "../scripts/script.js"></script>
+
+
+   <div id="imageContainer"></div>
+
+
+ 
+</body>
+
+
 </html>
+
