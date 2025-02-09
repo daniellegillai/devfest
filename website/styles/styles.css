@@ -46,5 +46,16 @@ body {
 
 .small-image {
     width: 800px; /* Width of the image */
+    border:#c55221 5px solid; /* Border around the image */
     height: auto;
 }
+
+h1 {
+    text-align: center; /* Center the text */
+    color: #fff5f5; /* Soft white with a slight red tint */
+    text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff3333, 0 0 15px #ff1a1a, 0 0 20px #cc0000;
+}
+
+
+
+
