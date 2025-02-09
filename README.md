@@ -43,3 +43,19 @@ HealthHub is an interactive web application designed to make health data more en
 * backend/ – Python-based backend to handle data storage with MongoDB.
 
 * assets/ – Contains images, styles, and scripts.
+
+**Future Enhancements**
+
+* Implement user authentication for secure access: 2FA
+
+* Expand avatar selection for even greater diversity. Implement the Snap Kit API so users can upload their own bitmoji from their phone
+
+* Introduce AI-powered health insights and recommendations.
+
+* Mobile-friendly design for accessibility on all devices.
+
+* More secure ways to protect sensitive health data
+
+**Contributing**
+
+We welcome contributions! If you'd like to improve HealthHub, please fork the repository and submit a pull request.
