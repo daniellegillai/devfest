@@ -212,3 +212,11 @@ form button {
 form button:hover {
   background-color: #F8B7B4;
 }
+
+.textbox {
+  font-size: 50px; /* Font size of the text */
+  text-align: center; /* Center the text */
+  margin: 20px auto; /* Center the text box on the page */
+  font-family: 'Poppins', sans-serif; /* Font family */ 
+  color: white; /* White text */
+}
