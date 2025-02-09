@@ -1,0 +1,112 @@
+
+nav {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #E5989B;
+        font-size: larger;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        font-size:larger;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      
+      li a:hover {
+        background-color: #a7727d;
+      }
+}
+
+.nav-logo {
+    height: 50px; /* Adjust size */
+    width: auto;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.image-container img {
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    border: #E5989B 5px solid;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.textbox {
+    font-size: 50px; /* Font size of the text */
+    text-align: center; /* Center the text */
+    margin: 20px auto; /* Center the text box on the page */
+    font-family: 'Poppins', sans-serif; /* Font family */ 
+    color: white; /* White text */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    width: 78%;
+    margin-top: -170px;
+    margin-left: 80px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #d54865;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-container button:nth-child(2) {
+    margin-left: -10px; /* Moves only the second button to the right */
+}
+.button-container button:nth-child(3) {
+    margin-left: 75px; /* Moves only the last button to the right */
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
