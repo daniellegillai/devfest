@@ -36,20 +36,60 @@ nav {
     right: 20px;
 }
 
+.textbox {
+    font-size: 50px; /* Font size of the text */
+    text-align: center; /* Center the text */
+    margin: 20px auto; /* Center the text box on the page */
+    font-family: 'Poppins', sans-serif; /* Font family */ 
+    color: white; /* White text */
+}
+
 .dentcontainer {
-    margin-top: 20vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.mouth {
-    
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .side {
     display: flex;
     flex-direction: column;
-    gap: 30%; 
+    gap: 20vw;
+    width: 78%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #d54865;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #8e2b3f;
 }

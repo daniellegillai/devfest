@@ -25,17 +25,29 @@
         HealthHub Optical
     </h1>  
     <div class="image-wrapper">
-        <div class="image-container">
-        <img src="images/actualeyeglasses.png" alt="Image 1">
-        <img src="images/doctorsurgery-removebg-preview.png" alt="Image 2">
-        <img src="images/eyehealth.png" alt="Image 3">
+            <div class = "col">
+                <div class="image-container">
+                    <img src="images/actualeyeglasses.png" alt="Image 1">
+                </div>
+                <button onclick="openModal('modal1')">Exam Results and Eyeglass Perscriptions</button>
+            </div>
+            <div class = "col">
+                <div class="image-container">
+                    <img src="images/doctorsurgery-removebg-preview.png" alt="Image 2">
+                </div>
+                <button onclick="openModal('modal2')">Eye Procedures</button>
+            </div>
+            <div class = "col">
+                <div class="image-container">
+                    <img src="images/eyehealth.png" alt="Image 3">
+                </div>
+                <button onclick="openModal('modal3')">Eye Health</button>
+            </div>
+        
+      
         </div>
     </div> 
-    <div class="button-container">
-        <button onclick="openModal('modal1')">Exam Results and Eyeglass Perscriptions</button>
-        <button onclick="openModal('modal2')">Eye Procedures</button>
-        <button onclick="openModal('modal3')">Eye Health</button>
-    </div>
+
     
     <div id="modal1" class="modal" onclick="closeModal('modal1')">
         <div class="modal-content">Eye exam results and eyeglass perscriptions</div>

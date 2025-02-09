@@ -47,9 +47,10 @@ nav {
 
 .image-wrapper {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
     width: 100%;
 }
 
@@ -62,6 +63,12 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .textbox {
     font-size: 50px; /* Font size of the text */
     text-align: center; /* Center the text */
@@ -70,15 +77,12 @@ nav {
     color: white; /* White text */
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-around;
-    width: 78%;
-    margin-top: -170px;
-    margin-left: 80px;
-}
+
 button {
     padding: 10px 20px;
+    margin-top: 20px;
+    margin-left: 4px;
+    margin-right: 4px;
     font-size: 16px;
     cursor: pointer;
     color: white;
@@ -87,12 +91,10 @@ button {
     border-radius: 5px;
 }
 
-.button-container button:nth-child(2) {
-    margin-left: -10px; /* Moves only the second button to the right */
+button:hover{
+    background-color: #8e2b3f;
 }
-.button-container button:nth-child(3) {
-    margin-left: 75px; /* Moves only the last button to the right */
-}
+
 .modal {
     display: none;
     position: fixed;

@@ -20,14 +20,42 @@
 </header>
 
 <body style="background-color: rgba(255, 212, 198, 0.938);">
+    <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" , class="textbox">
+        HealthHub Dentical
+    </h1>  
     <div class = "dentcontainer">
         <div class = "side">
-            <button class="open-modal" data-modal="modalHead">Head</button>
+            <button onclick="openModal('modalCav')">Cavities</button>
+            <button onclick="openModal('modalOr')">Oral Surgeries</button>
         </div>
         <img src="images/mouth.png"class="mouth">
         <div class = "side">
-            <button class="open-modal" data-modal="modalHead">Head</button>
+            <button onclick="openModal('modalX')">X-Rays</button>
+            <button onclick="openModal('modalDoc')">Doctor Visits</button>
         </div>
     </div>
+
+
+    <div id="modalCav" class="modal" onclick="closeModal('modalCav')">
+        <div class="modal-content">Cavities</div>
+    </div>
+    <div id="modalOr" class="modal" onclick="closeModal('modalOr')">
+        <div class="modal-content">Oral Surgeries</div>
+    </div>
+    <div id="modalX" class="modal" onclick="closeModal('modalX')">
+        <div class="modal-content">X - Rays</div>
+    </div>
+    <div id="modalDoc" class="modal" onclick="closeModal('modalDoc')">
+        <div class="modal-content">Doctor visits</div>
+    </div>
+    
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
 </body>
 </html>
