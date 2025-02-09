@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../styles/styleshub.css">
+    <link rel="stylesheet" href="../styles/opticals.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optical</title>
+   
 </head>
 <header>
     <nav id = "navbar">
@@ -20,6 +21,39 @@
 </header>
 
 <body style="background-color: rgba(255, 212, 198, 0.938);">
+    <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" , class="textbox">
+        HealthHub Optical
+    </h1>  
+    <div class="image-wrapper">
+        <div class="image-container">
+        <img src="images/actualeyeglasses.png" alt="Image 1">
+        <img src="images/doctorsurgery-removebg-preview.png" alt="Image 2">
+        <img src="images/eyehealth.png" alt="Image 3">
+        </div>
+    </div> 
+    <div class="button-container">
+        <button onclick="openModal('modal1')">Exam Results and Eyeglass Perscriptions</button>
+        <button onclick="openModal('modal2')">Eye Procedures</button>
+        <button onclick="openModal('modal3')">Eye Health</button>
+    </div>
     
+    <div id="modal1" class="modal" onclick="closeModal('modal1')">
+        <div class="modal-content">Eye exam results and eyeglass perscriptions</div>
+    </div>
+    <div id="modal2" class="modal" onclick="closeModal('modal2')">
+        <div class="modal-content">Eye surgeries and procedures</div>
+    </div>
+    <div id="modal3" class="modal" onclick="closeModal('modal3')">
+        <div class="modal-content">Eye Health</div>
+    </div>
+    
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
 </body>
 </html>
